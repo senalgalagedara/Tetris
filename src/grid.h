@@ -2,10 +2,10 @@
 #include <vector>
 #include <raylib.h>
 
-class grid
+class Grid
 {
 public:
-    grid();
+    Grid();
     void Initialize();
     void Print();
     void Draw();

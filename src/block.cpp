@@ -2,7 +2,7 @@
 
 Block::Block()
 {
-    cellSize = 30;
+    cellSize = 50;
     rotationState = 0;
     colors = GetCellColors();
     rowOffset = 0;

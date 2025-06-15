@@ -2,16 +2,16 @@
 #include <iostream>
 #include "colors.h"
 
-grid::grid()
+Grid::Grid()
 {
     numRows = 20;
     numCols = 10;
-    cellSize = 30;
+    cellSize = 50;
     Initialize();
     colors = GetCellColors();
 }
 
-void grid::Initialize()
+void Grid::Initialize()
 {
     for (int row = 0; row < numRows; row++)
     {
@@ -22,7 +22,7 @@ void grid::Initialize()
     }
 }
 
-void grid::Print()
+void Grid::Print()
 {
     for (int row = 0; row < numRows; row++)
     {
@@ -34,7 +34,7 @@ void grid::Print()
     }
 }
 
-void grid::Draw()
+void Grid::Draw()
 {
     for (int row = 0; row < numRows; row++)
     {
@@ -46,7 +46,7 @@ void grid::Draw()
     }
 }
 
-bool grid::IsCellOutside(int row, int column)
+bool Grid::IsCellOutside(int row, int column)
 {
     if (row >= 0 && row < numRows && column >= 0 && column < numCols)
     {
@@ -55,7 +55,7 @@ bool grid::IsCellOutside(int row, int column)
     return true;
 }
 
-bool grid::IsCellEmpty(int row, int column)
+bool Grid::IsCellEmpty(int row, int column)
 {
     if (grid[row][column] == 0)
     {
@@ -64,7 +64,7 @@ bool grid::IsCellEmpty(int row, int column)
     return false;
 }
 
-int grid::ClearFullRows()
+int Grid::ClearFullRows()
 {
     int completed = 0;
     for (int row = numRows - 1; row >= 0; row--)
@@ -82,7 +82,7 @@ int grid::ClearFullRows()
     return completed;
 }
 
-bool grid::IsRowFull(int row)
+bool Grid::IsRowFull(int row)
 {
     for (int column = 0; column < numCols; column++)
     {
@@ -94,7 +94,7 @@ bool grid::IsRowFull(int row)
     return true;
 }
 
-void grid::ClearRow(int row)
+void Grid::ClearRow(int row)
 {
     for (int column = 0; column < numCols; column++)
     {
@@ -102,7 +102,7 @@ void grid::ClearRow(int row)
     }
 }
 
-void grid::MoveRowDown(int row, int numRows)
+void Grid::MoveRowDown(int row, int numRows)
 {
     for (int column = 0; column < numCols; column++)
     {
